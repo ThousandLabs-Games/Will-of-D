@@ -19,6 +19,9 @@ class MainActivity : FragmentActivity() {
 
     companion object {
         const val EXTRA_ECRAN = "ecran"
+
+        /** Vrai tant que l'écran de Will of D existe : l'icône ne change pas pendant ce temps. */
+        @Volatile var vivante = false
     }
 
     /** Écran demandé depuis une notification (téléchargements). */
@@ -26,6 +29,7 @@ class MainActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        vivante = true
         appliquerCaptures()
         enableEdgeToEdge(
             statusBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),
@@ -66,8 +70,15 @@ class MainActivity : FragmentActivity() {
         }
     }
 
+    override fun onStop() {
+        super.onStop()
+        if (!isChangingConfigurations && IconeDuMoment.aChanger(this)) runCatching { IconeDuMoment.programmerBientot(applicationContext) }
+    }
+
     override fun onDestroy() {
         if (isFinishing && Reglages.effacerALaSortie) Confidentialite.effacerDonnees(applicationContext)
+        if (!isChangingConfigurations) vivante = false
+        if (isFinishing && !isChangingConfigurations) runCatching { IconeDuMoment.appliquer(applicationContext) }
         super.onDestroy()
     }
 }

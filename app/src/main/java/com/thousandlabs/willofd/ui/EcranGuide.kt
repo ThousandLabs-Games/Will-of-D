@@ -33,6 +33,7 @@ import androidx.compose.material.icons.outlined.Security
 import androidx.compose.material.icons.outlined.Shield
 import androidx.compose.material.icons.outlined.SystemUpdate
 import androidx.compose.material.icons.outlined.TouchApp
+import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material.icons.outlined.PhoneAndroid
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -157,6 +158,16 @@ private val GUIDE = listOf(
         )
     ),
     Rubrique(
+        Icons.Outlined.Palette, "Changer l'icône selon l'heure",
+        listOf(
+            "Réglages, puis « Icône de l'application ». Quatre icônes : D gravé, Boussole-bouclier, Stèle à la flamme, Lanterne de navire.",
+            "« Selon l'heure » : pour chaque plage, touchez l'heure de début pour la changer, puis l'icône pour la choisir. Elles se succèdent dans cet ordre au fil de la journée.",
+            "Ajoutez ou retirez des plages à votre guise ; « Par défaut » rétablit 6 h, 12 h, 18 h et 21 h.",
+            "Vous pouvez aussi garder une seule icône en permanence.",
+            "L'icône change quand Will of D est fermée, pour ne pas interrompre la navigation. « Appliquer maintenant » la change tout de suite en fermant l'application."
+        )
+    ),
+    Rubrique(
         Icons.Outlined.SystemUpdate, "Mettre à jour Will of D",
         listOf(
             "Réglages, puis Mises à jour : la recherche est automatique.",
@@ -169,6 +180,14 @@ private val GUIDE = listOf(
 private class Version(val numero: String, val points: List<String>)
 
 private val NOUVEAUTES = listOf(
+    Version(
+        "1.0.1",
+        listOf(
+            "Quatre icônes au choix : D gravé, Boussole-bouclier, Stèle à la flamme et Lanterne de navire.",
+            "Icône selon l'heure : vous choisissez les plages horaires et l'icône de chacune, donc l'ordre dans lequel elles se succèdent. Une icône fixe reste possible.",
+            "Guide « Comment faire » complété."
+        )
+    ),
     Version(
         "1.0.0",
         listOf(

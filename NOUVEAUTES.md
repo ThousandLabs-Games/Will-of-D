@@ -1,3 +1,9 @@
+## Will of D 1.0.1
+
+- Quatre icônes au choix : D gravé, Boussole-bouclier, Stèle à la flamme et Lanterne de navire.
+- Icône selon l'heure : vous choisissez les plages horaires et l'icône de chacune, donc l'ordre dans lequel elles se succèdent. Une icône fixe reste possible (Réglages, puis Icône de l'application).
+- Guide « Comment faire » complété.
+
 ## Will of D 1.0.0
 
 Première version de Will of D, navigateur sécurisé de Thousand Labs Games.

@@ -28,6 +28,7 @@ import androidx.compose.material.icons.outlined.Lock
 import androidx.compose.material.icons.outlined.LockClock
 import androidx.compose.material.icons.outlined.LockOpen
 import androidx.compose.material.icons.outlined.NewReleases
+import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material.icons.outlined.PhotoLibrary
 import androidx.compose.material.icons.outlined.PictureInPicture
 import androidx.compose.material.icons.outlined.Policy
@@ -182,6 +183,11 @@ fun EcranReglages(onRetour: () -> Unit, aller: (Destination) -> Unit) {
 
             HorizontalDivider(Modifier.padding(top = 12.dp))
             TitreSection("Application")
+            LigneAction(
+                Icons.Outlined.Palette,
+                "Icône de l'application",
+                if (com.thousandlabs.willofd.IconeDuMoment.fixe < 0) "Selon l'heure, plage par plage" else "Toujours : " + com.thousandlabs.willofd.IconeDuMoment.voulue().nom
+            ) { aller(Destination.Icone) }
             LigneAction(Icons.Outlined.SystemUpdate, "Mises à jour", "Version installée : ${BuildConfig.VERSION_NAME}") { aller(Destination.MisesAJour) }
             LigneAction(Icons.AutoMirrored.Outlined.HelpOutline, "Comment faire", "Guide d'utilisation") { aller(Destination.Guide) }
             LigneAction(Icons.Outlined.NewReleases, "Nouveautés", "Ce qui a changé dans cette version") { aller(Destination.Nouveautes) }

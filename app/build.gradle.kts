@@ -5,7 +5,7 @@ plugins {
 }
 
 // Version unique de l'application : le versionCode en est déduit automatiquement.
-val versionNom = "1.0.0"
+val versionNom = "1.0.1"
 val versionCodeCalcule = versionNom.split(".").map { it.toInt() }.let { it[0] * 10000 + it[1] * 100 + it[2] }
 
 android {
@@ -75,6 +75,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
     implementation("androidx.biometric:biometric:1.1.0")
     implementation("androidx.webkit:webkit:1.12.1")
+    implementation("androidx.work:work-runtime-ktx:2.10.0")
 
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.foundation:foundation")

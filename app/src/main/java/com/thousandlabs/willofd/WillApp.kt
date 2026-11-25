@@ -25,6 +25,7 @@ class WillApp : Application() {
         Notifications.init(this)
         Verrou.init(this)
         Telechargeur.init(this)
+        runCatching { IconeDuMoment.programmer(this) }
         ProcessLifecycleOwner.get().lifecycle.addObserver(
             LifecycleEventObserver { _, e ->
                 when (e) {

@@ -46,6 +46,7 @@ sealed interface Destination {
     data object Guide : Destination
     data object Nouveautes : Destination
     data object APropos : Destination
+    data object Icone : Destination
     data object Quitter : Destination
 }
 
@@ -108,6 +109,7 @@ fun Racine(activite: MainActivity) {
             Destination.Guide -> EcranGuide(onRetour = ::retour)
             Destination.Nouveautes -> EcranNouveautes(onRetour = ::retour)
             Destination.APropos -> EcranAPropos(onRetour = ::retour)
+            Destination.Icone -> EcranIcone(onRetour = ::retour)
             Destination.Quitter -> Unit
         }
         Navigateur.pleinEcran?.let { PleinEcranVideo(activite, it) }
